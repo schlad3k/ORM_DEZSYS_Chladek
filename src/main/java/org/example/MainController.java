@@ -96,7 +96,7 @@ public class MainController {
 		}
 	}
 
-	@GetMapping(path="getProduct")
+	@GetMapping(path="/getProduct")
 	public @ResponseBody Product getProduct(@RequestParam int warehouseid, @RequestParam int productid) {
 		if(warehouseRepository.existsById(warehouseid)) {
 			return warehouseRepository.findById(warehouseid).get().getProduct(productid);
