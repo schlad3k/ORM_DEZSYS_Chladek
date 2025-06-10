@@ -69,7 +69,7 @@ public class MainController {
 		}
 		return "Saved";
 	}
-	@GetMapping(path="/updateWarehouse")
+	@PutMapping(path="/updateWarehouse")
 	public @ResponseBody void updateWarehouse(@RequestParam int warehouseid, @RequestParam String warehousename) {
 		warehouseRepository.findById(warehouseid).get().setWarehousename(warehousename);
 		warehouseRepository.save(warehouseRepository.findById(warehouseid).get());
